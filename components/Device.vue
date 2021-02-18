@@ -22,9 +22,10 @@
 
 <div id="wrapper" >
 
-  <v-sheet class="phone" id="phone_1" :height="toggleScreen.height" :width="toggleScreen.width"  :class="views">
-    <iframe class="rounded-lg" src="http://localhost:3000/"  id="frame_1"></iframe>
+  <v-sheet class="phone " id="phone_1" :height="toggleScreen.height" :width="toggleScreen.width"  :class="views">
+    <iframe class="holds-the-iframe" src="https://nuxtjs.org/"  id="frame_1"></iframe>
 
+<!-- navigational buttons that will be implented in the future -->
     <!-- <v-bottom-navigation
     style="z-index='9999'"
     :value="value"
@@ -108,7 +109,7 @@
 <style >
 
 #wrapper {
-    perspective: 1500px;
+    perspective: 1000px;
 }
 
  .phone {
@@ -147,7 +148,10 @@
   }
 
 
+/* add a dynamic property to handle the scale
+    this is optional but perhaps a $vuetify.breakpoint will do the job
 
+*/
  @media (max-width:900px) {
     #wrapper {
       transform: scale(0.8, 0.8);
@@ -166,5 +170,10 @@
       transform: scale(0.4, 0.4);
     }
   }
+
+  .holds-the-iframe {
+  background:url('https://media1.giphy.com/media/3oEjI6SIIHBdRxXI40/giphy.gif') center center no-repeat;
+background-color: grey;
+}
 
 </style>
