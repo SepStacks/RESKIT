@@ -25,31 +25,6 @@
   <v-sheet class="phone " id="phone_1" :height="toggleScreen.height" :width="toggleScreen.width"  :class="views">
     <iframe class="holds-the-iframe" src="https://nuxtjs.org/"  id="frame_1"></iframe>
 
-<!-- navigational buttons that will be implented in the future -->
-    <!-- <v-bottom-navigation
-    style="z-index='9999'"
-    :value="value"
-    color="primary"
-    horizontal
-  >
-    <v-btn>
-      <span>Recents</span>
-
-      <v-icon>mdi-history</v-icon>
-    </v-btn>
-
-    <v-btn>
-      <span>Favorites</span>
-
-      <v-icon>mdi-heart</v-icon>
-    </v-btn>
-
-    <v-btn>
-      <span>Nearby</span>
-
-      <v-icon>mdi-map-marker</v-icon>
-    </v-btn>
-  </v-bottom-navigation> -->
   </v-sheet>
 
 </div>
