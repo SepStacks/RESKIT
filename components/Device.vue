@@ -9,7 +9,7 @@
             <v-col cols="12">
               <!-- text-field -->
               <v-text-field v-model="url" solo/>
-              <v-btn >save</v-btn>
+              <v-btn @click="src = url">update</v-btn>
 
 
             </v-col>
