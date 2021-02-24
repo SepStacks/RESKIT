@@ -1,4 +1,5 @@
-# ussd-testing
+# Testing-UI
+  Project inspired by this code pen https://codepen.io/FelixRilling/pen/vLRNvb
 
 ## Build Setup
 
