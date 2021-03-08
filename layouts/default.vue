@@ -1,11 +1,11 @@
 <template>
-<div>
+<v-app>
     <v-main>
         <v-container>
             <nuxt />
         </v-container>
     </v-main>
-</div>
+</v-app>
 </template>
 
 <script>
