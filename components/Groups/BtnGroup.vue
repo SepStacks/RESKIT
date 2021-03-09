@@ -31,7 +31,7 @@
                 v-for="(mode, index2) in item.modes"
                 :key="index2"
               >
-                <v-btn>
+                <v-btn @click="inputVal = mode">
                   <v-icon v-text="mode.icon" />
                 </v-btn>
               </v-col>
