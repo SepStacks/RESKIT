@@ -12,9 +12,8 @@
         id="frame_1"
         class="holds-the-iframe"
         :src="src"
-      >
+      />
 
-      </iframe>
 
     </v-sheet>
 
@@ -25,9 +24,12 @@
 export default {
   props: {
     toggleScreen: {
-      required: true
+      required: false
     },
     views: {
+      required: false
+    },
+      mode: {
       required: false
     },
     src: {
@@ -50,18 +52,18 @@ export default {
 </script>
 
 
-<style >
+<style scoped>
 #wrapper {
-  perspective: 1000px;
+  perspective: 1000px ;
 }
 
 .phone {
-  border: 40px solid #ddd;
-  border-width: 55px 7px;
-  border-radius: 30px;
-  margin: 50px auto;
-  overflow: hidden;
-  transition: all 0.5s ease;
+  border: 40px solid #ddd ;
+  border-width: 55px 7px ;
+  border-radius: 30px ;
+  margin: 50px auto ;
+  overflow: hidden ;
+  transition: all 0.5s ease ;
 }
 
 .phone iframe {
@@ -114,6 +116,6 @@ export default {
 .holds-the-iframe {
   background: url('https://media1.giphy.com/media/3oEjI6SIIHBdRxXI40/giphy.gif')
     center center no-repeat;
-  background-color: grey;
+  background-color: #fff;
 }
 </style>
