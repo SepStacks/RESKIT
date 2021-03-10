@@ -1,9 +1,7 @@
 <template>
-<v-app>
-    <v-main>
-            <nuxt />
-    </v-main>
-</v-app>
+  <v-app>
+    <nuxt />
+  </v-app>
 </template>
 
 <script>
@@ -13,5 +11,4 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
 </style>

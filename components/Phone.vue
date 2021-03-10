@@ -7,11 +7,14 @@
       :width="toggleScreen.width"
       :class="views"
     >
-      <slot
-        v-if="$slots.content"
-        name="content"
-      />
+      <v-container v-if="$slots.content" fill-height>
+        <v-row  justify="center" align="center">
+        <v-col cols="12" class="d-flex align-end">
+          <slot name="content" />
 
+        </v-col>
+      </v-row>
+      </v-container>
       <iframe
         v-else
         id="frame_1"

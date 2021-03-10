@@ -18,7 +18,12 @@
           slot="content"
         >
 
-          <UiVueFile :file="'LottieFile'" />
+          <UiVueFile
+            :file="'LottieFile'"
+            :toggleScreen="toggleScreen"
+            class="d-flex align-center uifile"
+          />
+
         </div>
 
       </Phone>
@@ -62,4 +67,8 @@ export default {
   -webkit-animation-timing-function: linear;
 }
 /* Rotate Animation */
+
+.uifile {
+  align-items: center !important;
+}
 </style>
