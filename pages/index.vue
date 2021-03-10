@@ -10,10 +10,18 @@
     >
       <Phone
         class="size"
-        :mode='mode'
-        src="https://images.pexels.com/photos/1366919/pexels-photo-1366919.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+        :toggleScreen='toggleScreen'
         :views=" 'view_3'"
-      />
+      >
+        <div
+          class="content"
+          slot="content"
+        >
+        
+          <UIVueFile :file="'LottieFile'" />
+        </div>
+
+      </Phone>
     </v-col>
   </v-row>
 </template>
@@ -22,14 +30,19 @@
 export default {
   data () {
     return {
-      mode: { title: "Mobile", width: "482", height: "982" },
+      toggleScreen: {
+        title: 'Mobile',
+        width: '414',
+        height: '736'
+
+      },
 
     }
   }
 }
 </script>
 
-<style>
+<style scoped>
 @-webkit-keyframes rotate {
   0% {
     -webkit-transform: rotateX(50deg) rotateY(0deg) rotateZ(30deg);

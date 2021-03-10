@@ -18,8 +18,6 @@
           {{ item.title }}
         </v-btn>
 
-          <slot name="content" :item="item" />
-
       </div>
 
     </v-btn-toggle>

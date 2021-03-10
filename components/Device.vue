@@ -3,12 +3,15 @@
     <v-row
       dense
       justify="center"
+
     >
       <!-- controls -->
       <v-col
         cols="3"
         class="pa-5 mr-10"
       >
+
+
         <v-row>
           <v-col cols="12">
             <!-- text-field -->
@@ -19,43 +22,21 @@
             <v-btn @click="src = url">update</v-btn>
           </v-col>
           {{toggleScreen}}
+
           <GroupsBtnGroup
             :items="screens"
             v-model="toggleScreen"
-          >
+          />
 
-            <!-- <template v-slot:content="{item}">
-              <v-row class="mt-3">
-                <v-col cols="12">
-                  <v-row
-                    dense
-                    align="center"
-                    justify="center"
-                  >
-                    <v-btn-toggle
-                      mandatory
-                      v-model="selectedMode"
-                    >
-                      <div
-                        v-for="(mode, index) in item.modes"
-                        :key="index"
-                      >
-                        <v-btn @click="selectedMode = mode">
-                          <v-icon v-text="mode.icon" />
-                          {{mode.title}}
-                        </v-btn>
-                      </div>
 
-                    </v-btn-toggle>
+           <v-col>
+                <v-btn @click="itemChange(toggleScreen)">
+                Rotate
 
-                  </v-row>
-                </v-col>
-              </v-row>
+              </v-btn>
+           </v-col>
 
-            </template> -->
-          </GroupsBtnGroup>
 
-          
           <v-col
             cols="12"
             v-if="toggleScreen.title === 'Mobile'"
@@ -183,7 +164,22 @@ export default {
   computed: {},
 
   methods: {
-    change () {
+    itemChange (togglescreen) {
+      console.log(togglescreen)
+      var width = togglescreen.width
+      var height = togglescreen.height
+
+      //landscape
+      if(togglescreen.width > togglescreen.height) {
+        //switch height and width
+        togglescreen.width = height
+         togglescreen.height = width
+
+      } else {
+        //portrait
+          togglescreen.width = height
+         togglescreen.height = width
+      }
 
     }
     // updateView (view) {
