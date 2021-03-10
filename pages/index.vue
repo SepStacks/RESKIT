@@ -17,8 +17,8 @@
           class="content"
           slot="content"
         >
-        
-          <UIVueFile :file="'LottieFile'" />
+
+          <UiVueFile :file="'LottieFile'" />
         </div>
 
       </Phone>

@@ -15,16 +15,14 @@
 
     <div>loading component, please wait</div>
   <!-- Lottie file loader -->
-    <Loader/>
+    <UiLoader/>
 
   </div>
   </div>
 </template>
 
 <script>
-import Loader from '~/components/ui/Loader'
 export default {
-  components: {Loader},
     name: 'VueFile',
     inheritAttrs: false,
     props: {
