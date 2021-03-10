@@ -1,6 +1,5 @@
 <template>
   <div id="wrapper">
-
     <v-sheet
       class="phone "
       id="phone_1"
@@ -8,6 +7,7 @@
       :width="toggleScreen.width"
       :class="views"
     >
+
       <iframe
         id="frame_1"
         class="holds-the-iframe"
@@ -45,7 +45,11 @@ export default {
       'allow-scripts'
 
     ]
-  })
+  }),
+
+  mounted() {
+    console.log(this.toggleScreen)
+  }
 
 }
 </script>

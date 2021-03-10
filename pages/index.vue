@@ -10,7 +10,7 @@
     >
       <Phone
         class="size"
-        :toggleScreen="toggleScreen"
+        :mode='mode'
         src="https://images.pexels.com/photos/1366919/pexels-photo-1366919.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
         :views=" 'view_3'"
       />
@@ -22,7 +22,7 @@
 export default {
   data () {
     return {
-      toggleScreen: { title: "Mobile", width: "482", height: "982" },
+      mode: { title: "Mobile", width: "482", height: "982" },
 
     }
   }
@@ -30,10 +30,9 @@ export default {
 </script>
 
 <style>
-
 @-webkit-keyframes rotate {
   0% {
-   -webkit-transform: rotateX(50deg) rotateY(0deg) rotateZ(30deg);
+    -webkit-transform: rotateX(50deg) rotateY(0deg) rotateZ(30deg);
   }
   50% {
     -webkit-transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
@@ -50,11 +49,4 @@ export default {
   -webkit-animation-timing-function: linear;
 }
 /* Rotate Animation */
-
-.size.rotate {
-  -webkit-animation-name: rotate;
-  -webkit-animation-duration: 15s;
-  -webkit-animation-iteration-count: infinite;
-  -webkit-animation-timing-function: linear;
-}
 </style>
