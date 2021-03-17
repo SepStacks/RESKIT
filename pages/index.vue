@@ -7,14 +7,21 @@
     >
       <v-col
         cols="12"
-        md="3"
+        xl="4"
+        lg="5"
+        md="6"
       >
-        <div class="white--text display-3">RESKIT</div>
-        <div class="subtitle white--text mt-2">
-         Responsive Testing-UI made With Nuxt + vuetify
+        <div class="white--text display-4">RESKIT</div>
+        <div class="display-1 white--text mt-2">
+          Responsive Testing-UI made With Nuxt + vuetify
         </div>
 
-          <v-btn dark class="mt-5" color="accent" to="/test-ui" >Test UI</v-btn>
+        <v-btn
+          dark
+          class="mt-5"
+          color="accent"
+          to="/test-ui"
+        >Test UI</v-btn>
 
       </v-col>
       <v-col
@@ -48,6 +55,7 @@
 
 <script>
 export default {
+  layout: 'home',
   data () {
     return {
       toggleScreen: {
@@ -76,10 +84,12 @@ export default {
 }
 .size {
   transform: scale(0.5, 0.5);
-  -webkit-animation-name: rotate;
+  animation: rotate 15s infinite linear;
+
+  /* -webkit-animation-name: rotate;
   -webkit-animation-duration: 15s;
   -webkit-animation-iteration-count: infinite;
-  -webkit-animation-timing-function: linear;
+  -webkit-animation-timing-function: linear; */
 }
 /* Rotate Animation */
 

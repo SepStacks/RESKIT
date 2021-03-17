@@ -1,24 +1,24 @@
 <template>
   <div>
     <v-btn-toggle
+    color="red"
       mandatory
       v-model="inputVal"
     >
 
-      <div
-        class="mx-3 pa-5"
-        v-for="(item, index) in items"
-        :key="index"
-      >
+      <v-card-actions>
+
         <v-btn
-          class="mx-3 "
+          v-for="(item, index) in items"
+          :key="index"
           :value="item"
           @click="inputVal = item"
         >
+          <v-icon v-text="item.icon" />
           {{ item.title }}
         </v-btn>
 
-      </div>
+      </v-card-actions>
 
     </v-btn-toggle>
 

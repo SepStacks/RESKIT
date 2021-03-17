@@ -3,7 +3,6 @@
     <v-row
       dense
       justify="center"
-
     >
       <!-- controls -->
       <v-col
@@ -11,31 +10,25 @@
         class="pa-5 mr-10"
       >
 
-
         <v-row>
           <v-col cols="12">
-            <!-- text-field -->
             <v-text-field
               v-model="url"
               solo
             />
             <v-btn @click="src = url">update</v-btn>
           </v-col>
-          {{toggleScreen}}
-
           <GroupsBtnGroup
             :items="screens"
             v-model="toggleScreen"
           />
 
+          <v-col>
+            <v-btn @click="itemChange(toggleScreen)">
+              Rotate
 
-           <v-col>
-                <v-btn @click="itemChange(toggleScreen)">
-                Rotate
-
-              </v-btn>
-           </v-col>
-
+            </v-btn>
+          </v-col>
 
           <v-col
             cols="12"
@@ -116,6 +109,7 @@ export default {
     screens: [
       {
         title: 'Mobile',
+        icon: 'las la-mobile',
         width: '414',
         height: '736',
         // modes: [
@@ -139,6 +133,7 @@ export default {
       },
       {
         title: 'Tablet',
+        icon: 'las la-tablet',
         width: '960',
         height: '600'
         // modes: [
@@ -170,15 +165,15 @@ export default {
       var height = togglescreen.height
 
       //landscape
-      if(togglescreen.width > togglescreen.height) {
+      if (togglescreen.width > togglescreen.height) {
         //switch height and width
         togglescreen.width = height
-         togglescreen.height = width
+        togglescreen.height = width
 
       } else {
         //portrait
-          togglescreen.width = height
-         togglescreen.height = width
+        togglescreen.width = height
+        togglescreen.height = width
       }
 
     }
