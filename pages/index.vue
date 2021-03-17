@@ -7,16 +7,14 @@
     >
       <v-col
         cols="12"
-        md="6"
+        md="3"
       >
-        <div class="title">RESPONSKIT</div>
-        <div class="subtitle">
-          responsive website -Testing-UI made With Nuxt + vuetify
+        <div class="white--text display-3">RESKIT</div>
+        <div class="subtitle white--text mt-2">
+         Responsive Testing-UI made With Nuxt + vuetify
         </div>
 
-        <v-card-actions>
-          <v-btn>Test UI</v-btn>
-        </v-card-actions>
+          <v-btn dark class="mt-5" color="accent" to="/test-ui" >Test UI</v-btn>
 
       </v-col>
       <v-col

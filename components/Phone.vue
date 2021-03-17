@@ -62,7 +62,7 @@ export default {
 }
 
 .phone {
-  border: 40px solid #596C9E;
+  border: 40px solid #2F3850;
   border-width: 55px 7px;
   border-radius: 30px;
   margin: 50px auto;
