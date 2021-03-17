@@ -46,26 +46,25 @@ export default {
   },
   theme: {
     themes: {
-      dark: {
-        text:'#707070',
-        primary: '#E61331',
-        accent: '#FFB300',
-        secondary: '#222324',
-        tertiary: "#282A2D",
-        quaternary: "#707070",
-        info: colors.teal.lighten3,
-        warning: colors.amber.base,
-        error: colors.deepOrange.accent4,
-        success: colors.green.accent3
-      },
+      // dark: {
+      //   text:'#707070',
+      //   primary: '#E61331',
+      //   accent: '#FFB300',
+      //   secondary: '#222324',
+      //   tertiary: "#282A2D",
+      //   quaternary: "#707070",
+      //   info: colors.teal.lighten3,
+      //   warning: colors.amber.base,
+      //   error: colors.deepOrange.accent4,
+      //   success: colors.green.accent3
+      // },
 
       light: {
-        text: '#282A2D',
-        primary: '#E61331',
-        accent: '#FFC100',
-        secondary: '#F1F1F1',
-        tertiary: '#F3F3F3',
-        quaternary: "#707070",
+        primary: '#1D1F2B',
+        accent: '#E31B6D',
+        secondary: '#252934',
+        tertiary: '#2F3850',
+        quaternary: "#596C9E",
         info: colors.teal.lighten1,
         warning: '#FFB300',
         error: colors.deepOrange.accent4,

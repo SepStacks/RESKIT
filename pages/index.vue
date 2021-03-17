@@ -1,34 +1,51 @@
 <template>
-  <v-row
-    justify="center"
-    align="center"
-  >
-    <v-col
-      cols="12"
-      sm="8"
-      md="6"
+  <v-container>
+
+    <v-row
+      justify="center"
+      align="center"
     >
-      <Phone
-        class="size"
-        :toggleScreen='toggleScreen'
-        :views=" 'view_3'"
+      <v-col
+        cols="12"
+        md="6"
       >
-        <div
-          class="content"
-          slot="content"
-        >
-
-          <UiVueFile
-            :file="'LottieFile'"
-            :toggleScreen="toggleScreen"
-            class="d-flex align-center uifile"
-          />
-
+        <div class="title">RESPONSKIT</div>
+        <div class="subtitle">
+          responsive website -Testing-UI made With Nuxt + vuetify
         </div>
 
-      </Phone>
-    </v-col>
-  </v-row>
+        <v-card-actions>
+          <v-btn>Test UI</v-btn>
+        </v-card-actions>
+
+      </v-col>
+      <v-col
+        cols="12"
+        sm="8"
+        md="6"
+      >
+        <Phone
+          class="size"
+          :toggleScreen='toggleScreen'
+          :views=" 'view_3'"
+        >
+          <div
+            class="content"
+            slot="content"
+          >
+
+            <UiVueFile
+              :file="'LottieFile'"
+              :toggleScreen="toggleScreen"
+              class="d-flex align-center uifile"
+            />
+
+          </div>
+
+        </Phone>
+      </v-col>
+    </v-row>
+  </v-container>
 </template>
 
 <script>

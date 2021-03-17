@@ -1,6 +1,7 @@
 <template>
   <div id="wrapper">
     <v-sheet
+
       class="phone "
       id="phone_1"
       :height="toggleScreen.height"
@@ -8,12 +9,8 @@
       :class="views"
     >
       <v-container v-if="$slots.content" fill-height>
-        <v-row  justify="center" align="center">
-        <v-col cols="12" class="d-flex align-end">
           <slot name="content" />
 
-        </v-col>
-      </v-row>
       </v-container>
       <iframe
         v-else
@@ -65,7 +62,7 @@ export default {
 }
 
 .phone {
-  border: 40px solid #ddd;
+  border: 40px solid #596C9E;
   border-width: 55px 7px;
   border-radius: 30px;
   margin: 50px auto;
@@ -87,20 +84,20 @@ export default {
 
 .phone.view_2 {
   transform: rotateX(0deg) rotateY(-60deg) rotateZ(0deg);
-  box-shadow: 5px 1px 0 #bbb, 9px 2px 0 #bbb, 12px 3px 0 #bbb, 15px 4px 0 #bbb,
-    0 7px 20px #999;
+  box-shadow: 5px 1px 0 #252934, 9px 2px 0 #252934, 12px 3px 0 #252934, 15px 4px 0 #252934,
+    0 7px 20px #181b24;
 }
 
 .phone.view_1 {
   transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
 
-  box-shadow: 0px 3px 0 #bbb, 0px 4px 0 #bbb, 0px 5px 0 #bbb, 0px 7px 0 #bbb,
-    0px 10px 20px #666;
+  box-shadow: 0px 3px 0 #252934, 0px 4px 0 #252934, 0px 5px 0 #252934, 0px 7px 0 #252934,
+    0px 10px 20px #181b24;
 }
 .phone.view_3 {
   transform: rotateX(50deg) rotateY(0deg) rotateZ(-50deg);
-  box-shadow: -3px 3px 0 #bbb, -6px 6px 0 #bbb, -9px 9px 0 #bbb,
-    -12px 12px 0 #bbb, -14px 10px 20px #666;
+  box-shadow: -3px 3px 0 #252934, -6px 6px 0 #252934, -9px 9px 0 #252934,
+    -12px 12px 0 #252934, -14px 10px 20px #181b24;
 }
 
 /* add a dynamic property to handle the scale
