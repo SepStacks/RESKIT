@@ -38,7 +38,7 @@
         <v-spacer></v-spacer>
 
         <v-btn dark text>
-          <v-icon class="mx-2">la-github</v-icon>
+          <v-icon class="mx-2" to="https://github.com/SepStacks/RESKIT">la-github</v-icon>
           Github
         </v-btn>
       </v-app-bar>

@@ -1,7 +1,24 @@
 {
-  "name": "ussd-testing",
+  "name": "reskit",
   "version": "1.0.0",
-  "private": true,
+  "description": "Responsive Testing-UI made With Nuxt + vuetify",
+  "author": "Jermaine Sepkitt",
+  "license": "MIT",
+  "contributors": [
+    {
+      "name": "Jermaine Sepkitt"
+    }
+  ],
+  "keywords": [
+    "nuxt",
+    "vuetify",
+    "lottie-files",
+    "vue",
+    "vuejs",
+    "easy"
+  ],
+  "repository": "https://github.com/SepStacks/RESKIT",
+
   "scripts": {
     "dev": "nuxt",
     "build": "nuxt build",
