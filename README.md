@@ -1,6 +1,8 @@
 # RESKIT
-  A Testing UI for responsive apps
-  Project inspired by this code pen https://codepen.io/FelixRilling/pen/vLRNvb
+## Made with Nuxt + Vuetify
+A Testing UI for responsive apps
+
+Project inspired by this code pen https://codepen.io/FelixRilling/pen/vLRNvb
 
 ## Build Setup
 
