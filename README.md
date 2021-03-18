@@ -1,5 +1,8 @@
-# Nuxt.js Screen-size-Testing-UI
-  Project inspired by this code pen https://codepen.io/FelixRilling/pen/vLRNvb
+# RESKIT
+A Testing UI for responsive apps
+
+## Made with Nuxt + Vuetify
+Project inspired by this code pen https://codepen.io/FelixRilling/pen/vLRNvb
 
 ## Build Setup
 
