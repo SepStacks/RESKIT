@@ -4,6 +4,7 @@ A Testing UI for responsive apps
 ## Made with Nuxt + Vuetify
 Project inspired by this code pen https://codepen.io/FelixRilling/pen/vLRNvb
 
+Test your site here https://reskit.netlify.app/test-ui
 ## Build Setup
 
 ```bash
