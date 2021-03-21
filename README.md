@@ -1,5 +1,5 @@
 # RESKIT
-A Testing UI for responsive apps
+simulator to allow approximate testing of responsive web pages
 
 ## Made with Nuxt + Vuetify
 Project inspired by this code pen https://codepen.io/FelixRilling/pen/vLRNvb
