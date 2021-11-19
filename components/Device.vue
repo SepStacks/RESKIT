@@ -1,7 +1,5 @@
 <template>
   <div id="wrapper" :style="`transform: ${wrapperScaleStyles};`">
-    {{ checkScreen }}
-
     <v-sheet class="device" id="device" :height="height" :width="width">
       <v-container v-if="$slots.content" fill-height>
         <slot name="content" />
@@ -34,13 +32,33 @@ export default {
     },
   },
   computed: {
-    checkScreen() {
-      const type = this.types.filter((type) => type === this.screen);
-      console.log('check-screen', this.screen, type, this.types)
-      return type[0];
-    },
+    // compare selected screen to an array of screens
+    // checkScreen() {
+    //   // const type = this.types.forEach((type) => type === this.screen);
+    //   // console.log('check-screen', this.screen, type, this.types);
+    //   // return type;
+    //   const type = this.types.forEach((screenType) => {
+    //     switch (screenType) {
+    //       case 'television':
+    //         return true;
+    //       case 'laptop':
+    //         return true;
+    //       case 'tablet':
+    //         return true;
+    //       case 'phone':
+    //         return true;
+    //     }
+    //   });
+    //   console.log('type', type);
+    //   return type;
+    // },
     // Check what screen size
     simulationBreakpoints() {
+      //this is needed nested underneath vuetify's initial breakpoint switch function
+      // use-case
+      // if you have large screen (>1264px < 1904px) and you want to simulate xl screens (>1904)
+      // this function allow you to add breakponts onto the simulated screens
+      // if you dont use this, you wont be able to simulate 4k screens and their smaller versions acurrately
       //create a base for the switch function
       switch (true) {
         // xl
@@ -65,110 +83,307 @@ export default {
       }
     },
     wrapperScaleStyles() {
+      console.log('hello', this.screen === this.checkScreen);
       // check what screen it is eg: (laptop, tablet, etc)
       // check what viewpoint it is eg: (xl, lg etc)
       // Create a component property that will store simulated breakpoints that matches vuetify
       // Each value should return the group they belong to eg md, xl etc
       // Call the simulated breakpoints in a switch function and within each case return the correct scaling
-      
-      if (this.screen === 'laptop') {
-        switch (this.$vuetify.breakpoint.name) {
-          case 'xl':
-            switch (this.simulationBreakpoints) {
-              case 'simultated-xl':
-                return 'scale(0.1, 0.1)';
-              case 'simultated-lg':
-                return 'scale(0.6, 0.6)';
-              case 'simultated-md':
-                return 'scale(0.4, 0.4)';
-              case 'simultated-sm':
-                return 'scale(0.4, 0.4)';
-              case 'simultated-xs':
-                return 'scale(0.4, 0.4)';
-            }
+      switch (true) {
+        case this.screen === 'television':
+          switch (this.$vuetify.breakpoint.name) {
+            case 'xl':
+              switch (this.simulationBreakpoints) {
+                case 'simultated-xl':
+                  return 'scale(0.1, 0.1)';
+                case 'simultated-lg':
+                  return 'scale(0.6, 0.6)';
+                case 'simultated-md':
+                  return 'scale(0.4, 0.4)';
+                case 'simultated-sm':
+                  return 'scale(0.4, 0.4)';
+                case 'simultated-xs':
+                  return 'scale(0.4, 0.4)';
+              }
 
-          case 'lg':
-            switch (this.simulationBreakpoints) {
-              case 'simultated-xl':
-                return 'scale(0.1, 0.1)';
-              case 'simultated-lg':
-                return 'scale(0.4, 0.4)';
-              case 'simultated-md':
-                return 'scale(0.4, 0.4)';
-              case 'simultated-sm':
-                return 'scale(0.4, 0.4)';
-              case 'simultated-xs':
-                return 'scale(0.4, 0.4)';
-            }
+            case 'lg':
+              switch (this.simulationBreakpoints) {
+                case 'simultated-xl':
+                  return 'scale(0.1, 0.1)';
+                case 'simultated-lg':
+                  return 'scale(0.4, 0.4)';
+                case 'simultated-md':
+                  return 'scale(0.4, 0.4)';
+                case 'simultated-sm':
+                  return 'scale(0.4, 0.4)';
+                case 'simultated-xs':
+                  return 'scale(0.4, 0.4)';
+              }
 
-          case 'md':
-            switch (this.simulationBreakpoints) {
-              case 'simultated-xl':
-                return 'scale(0.1, 0.1)';
-              case 'simultated-lg':
-                return 'scale(0.4, 0.4)';
-              case 'simultated-md':
-                return 'scale(0.4, 0.4)';
-              case 'simultated-sm':
-                return 'scale(0.4, 0.4)';
-              case 'simultated-xs':
-                return 'scale(0.4, 0.4)';
-            }
+            case 'md':
+              switch (this.simulationBreakpoints) {
+                case 'simultated-xl':
+                  return 'scale(0.1, 0.1)';
+                case 'simultated-lg':
+                  return 'scale(0.4, 0.4)';
+                case 'simultated-md':
+                  return 'scale(0.4, 0.4)';
+                case 'simultated-sm':
+                  return 'scale(0.4, 0.4)';
+                case 'simultated-xs':
+                  return 'scale(0.4, 0.4)';
+              }
 
-          case 'sm':
-            switch (this.simulationBreakpoints) {
-              case 'simultated-xl':
-                return 'scale(0.1, 0.1)';
-              case 'simultated-lg':
-                return 'scale(0.4, 0.4)';
-              case 'simultated-md':
-                return 'scale(0.4, 0.4)';
-              case 'simultated-sm':
-                return 'scale(0.4, 0.4)';
-              case 'simultated-xs':
-                return 'scale(0.4, 0.4)';
-            }
+            case 'sm':
+              switch (this.simulationBreakpoints) {
+                case 'simultated-xl':
+                  return 'scale(0.1, 0.1)';
+                case 'simultated-lg':
+                  return 'scale(0.4, 0.4)';
+                case 'simultated-md':
+                  return 'scale(0.4, 0.4)';
+                case 'simultated-sm':
+                  return 'scale(0.4, 0.4)';
+                case 'simultated-xs':
+                  return 'scale(0.4, 0.4)';
+              }
 
-          case 'xs':
-            //Simulated breakpoints
-            switch (this.simulationBreakpoints) {
-              case 'simultated-xl':
-                return 'scale(0.1, 0.1)';
-              case 'simultated-lg':
-                return 'scale(0.4, 0.4)';
-              case 'simultated-md':
-                return 'scale(0.4, 0.4)';
-              case 'simultated-sm':
-                return 'scale(0.4, 0.4)';
-              case 'simultated-xs':
-                return 'scale(0.4, 0.4)';
-            }
-        }
-      } else {
-        switch (this.$vuetify.breakpoint.name) {
-          case 'xs':
-            return `scale(0.8, 0.8)`;
+            case 'xs':
+              //Simulated breakpoints
+              switch (this.simulationBreakpoints) {
+                case 'simultated-xl':
+                  return 'scale(0.1, 0.1)';
+                case 'simultated-lg':
+                  return 'scale(0.4, 0.4)';
+                case 'simultated-md':
+                  return 'scale(0.4, 0.4)';
+                case 'simultated-sm':
+                  return 'scale(0.4, 0.4)';
+                case 'simultated-xs':
+                  return 'scale(0.4, 0.4)';
+              }
+          }
+        case this.screen === 'laptop':
+          switch (this.$vuetify.breakpoint.name) {
+            case 'xl':
+              switch (this.simulationBreakpoints) {
+                case 'simultated-xl':
+                  return 'scale(0.1, 0.1)';
+                case 'simultated-lg':
+                  return 'scale(0.6, 0.6)';
+                case 'simultated-md':
+                  return 'scale(0.4, 0.4)';
+                case 'simultated-sm':
+                  return 'scale(0.4, 0.4)';
+                case 'simultated-xs':
+                  return 'scale(0.4, 0.4)';
+              }
 
-          case 'sm':
-            return `scale(0.8, 0.8)`;
+            case 'lg':
+              switch (this.simulationBreakpoints) {
+                case 'simultated-xl':
+                  return 'scale(0.1, 0.1)';
+                case 'simultated-lg':
+                  return 'scale(0.4, 0.4)';
+                case 'simultated-md':
+                  return 'scale(0.4, 0.4)';
+                case 'simultated-sm':
+                  return 'scale(0.4, 0.4)';
+                case 'simultated-xs':
+                  return 'scale(0.4, 0.4)';
+              }
 
-          case 'md':
-            return `scale(0.8, 0.8)`;
+            case 'md':
+              switch (this.simulationBreakpoints) {
+                case 'simultated-xl':
+                  return 'scale(0.1, 0.1)';
+                case 'simultated-lg':
+                  return 'scale(0.4, 0.4)';
+                case 'simultated-md':
+                  return 'scale(0.4, 0.4)';
+                case 'simultated-sm':
+                  return 'scale(0.4, 0.4)';
+                case 'simultated-xs':
+                  return 'scale(0.4, 0.4)';
+              }
 
-          case 'lg':
-            return `scale(0.8, 0.8)`;
+            case 'sm':
+              switch (this.simulationBreakpoints) {
+                case 'simultated-xl':
+                  return 'scale(0.1, 0.1)';
+                case 'simultated-lg':
+                  return 'scale(0.4, 0.4)';
+                case 'simultated-md':
+                  return 'scale(0.4, 0.4)';
+                case 'simultated-sm':
+                  return 'scale(0.4, 0.4)';
+                case 'simultated-xs':
+                  return 'scale(0.4, 0.4)';
+              }
 
-          case 'xl':
-            return `scale(0.8, 0.8)`;
-        }
+            case 'xs':
+              //Simulated breakpoints
+              switch (this.simulationBreakpoints) {
+                case 'simultated-xl':
+                  return 'scale(0.1, 0.1)';
+                case 'simultated-lg':
+                  return 'scale(0.4, 0.4)';
+                case 'simultated-md':
+                  return 'scale(0.4, 0.4)';
+                case 'simultated-sm':
+                  return 'scale(0.4, 0.4)';
+                case 'simultated-xs':
+                  return 'scale(0.4, 0.4)';
+              }
+          }
+        case this.screen === 'tablet':
+          switch (this.$vuetify.breakpoint.name) {
+            case 'xl':
+              switch (this.simulationBreakpoints) {
+                case 'simultated-xl':
+                  return 'scale(0.1, 0.1)';
+                case 'simultated-lg':
+                  return 'scale(0.6, 0.6)';
+                case 'simultated-md':
+                  return 'scale(0.4, 0.4)';
+                case 'simultated-sm':
+                  return 'scale(0.4, 0.4)';
+                case 'simultated-xs':
+                  return 'scale(0.4, 0.4)';
+              }
+
+            case 'lg':
+              switch (this.simulationBreakpoints) {
+                case 'simultated-xl':
+                  return 'scale(0.1, 0.1)';
+                case 'simultated-lg':
+                  return 'scale(0.4, 0.4)';
+                case 'simultated-md':
+                  return 'scale(0.4, 0.4)';
+                case 'simultated-sm':
+                  return 'scale(0.4, 0.4)';
+                case 'simultated-xs':
+                  return 'scale(0.4, 0.4)';
+              }
+
+            case 'md':
+              switch (this.simulationBreakpoints) {
+                case 'simultated-xl':
+                  return 'scale(0.1, 0.1)';
+                case 'simultated-lg':
+                  return 'scale(0.4, 0.4)';
+                case 'simultated-md':
+                  return 'scale(0.4, 0.4)';
+                case 'simultated-sm':
+                  return 'scale(0.4, 0.4)';
+                case 'simultated-xs':
+                  return 'scale(0.4, 0.4)';
+              }
+
+            case 'sm':
+              switch (this.simulationBreakpoints) {
+                case 'simultated-xl':
+                  return 'scale(0.1, 0.1)';
+                case 'simultated-lg':
+                  return 'scale(0.4, 0.4)';
+                case 'simultated-md':
+                  return 'scale(0.4, 0.4)';
+                case 'simultated-sm':
+                  return 'scale(0.4, 0.4)';
+                case 'simultated-xs':
+                  return 'scale(0.4, 0.4)';
+              }
+
+            case 'xs':
+              //Simulated breakpoints
+              switch (this.simulationBreakpoints) {
+                case 'simultated-xl':
+                  return 'scale(0.1, 0.1)';
+                case 'simultated-lg':
+                  return 'scale(0.4, 0.4)';
+                case 'simultated-md':
+                  return 'scale(0.4, 0.4)';
+                case 'simultated-sm':
+                  return 'scale(0.4, 0.4)';
+                case 'simultated-xs':
+                  return 'scale(0.4, 0.4)';
+              }
+          }
+        case this.screen === 'phone':
+          switch (this.$vuetify.breakpoint.name) {
+            case 'xl':
+              switch (this.simulationBreakpoints) {
+                case 'simultated-xl':
+                  return 'scale(0.1, 0.1)';
+                case 'simultated-lg':
+                  return 'scale(0.6, 0.6)';
+                case 'simultated-md':
+                  return 'scale(0.4, 0.4)';
+                case 'simultated-sm':
+                  return 'scale(0.4, 0.4)';
+                case 'simultated-xs':
+                  return 'scale(0.4, 0.4)';
+              }
+
+            case 'lg':
+              switch (this.simulationBreakpoints) {
+                case 'simultated-xl':
+                  return 'scale(0.1, 0.1)';
+                case 'simultated-lg':
+                  return 'scale(0.4, 0.4)';
+                case 'simultated-md':
+                  return 'scale(0.4, 0.4)';
+                case 'simultated-sm':
+                  return 'scale(0.4, 0.4)';
+                case 'simultated-xs':
+                  return 'scale(0.4, 0.4)';
+              }
+
+            case 'md':
+              switch (this.simulationBreakpoints) {
+                case 'simultated-xl':
+                  return 'scale(0.1, 0.1)';
+                case 'simultated-lg':
+                  return 'scale(0.4, 0.4)';
+                case 'simultated-md':
+                  return 'scale(0.4, 0.4)';
+                case 'simultated-sm':
+                  return 'scale(0.4, 0.4)';
+                case 'simultated-xs':
+                  return 'scale(0.4, 0.4)';
+              }
+
+            case 'sm':
+              switch (this.simulationBreakpoints) {
+                case 'simultated-xl':
+                  return 'scale(0.1, 0.1)';
+                case 'simultated-lg':
+                  return 'scale(0.4, 0.4)';
+                case 'simultated-md':
+                  return 'scale(0.4, 0.4)';
+                case 'simultated-sm':
+                  return 'scale(0.4, 0.4)';
+                case 'simultated-xs':
+                  return 'scale(0.4, 0.4)';
+              }
+
+            case 'xs':
+              //Simulated breakpoints
+              switch (this.simulationBreakpoints) {
+                case 'simultated-xl':
+                  return 'scale(0.1, 0.1)';
+                case 'simultated-lg':
+                  return 'scale(0.4, 0.4)';
+                case 'simultated-md':
+                  return 'scale(0.4, 0.4)';
+                case 'simultated-sm':
+                  return 'scale(0.4, 0.4)';
+                case 'simultated-xs':
+                  return 'scale(0.4, 0.4)';
+              }
+          }
       }
     },
-    //     deviceScreenStyles() {
-    //     if (this.activedevice) {
-    //       const screen = this.activedevice.screen;
-    //       return `left: ${screen.left}px; top: ${screen.top}px; width: ${screen.width}px; height: ${screen.height}px;`;
-    //     }
-    // }
   },
 };
 </script>
