@@ -156,15 +156,6 @@
       "height": 732
     },
     {
-      "name": "Nokia 8110 4G",
-      "width": 240,
-      "height": 320,
-      "screen": "phone",
-      "userAgent": "Mozilla/5.0 (Mobile; Nokia 8110 4G; rv:48.0) Gecko/48.0 Firefox/48.0 KAIOS/2.5",
-      "touch": true,
-      "os": "KaiOS"
-    },
-    {
       "name": "Pixel 2",
       "featured": false,
       "width": 411,
