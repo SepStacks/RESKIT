@@ -32,26 +32,6 @@ export default {
     },
   },
   computed: {
-    // compare selected screen to an array of screens
-    // checkScreen() {
-    //   // const type = this.types.forEach((type) => type === this.screen);
-    //   // console.log('check-screen', this.screen, type, this.types);
-    //   // return type;
-    //   const type = this.types.forEach((screenType) => {
-    //     switch (screenType) {
-    //       case 'television':
-    //         return true;
-    //       case 'laptop':
-    //         return true;
-    //       case 'tablet':
-    //         return true;
-    //       case 'phone':
-    //         return true;
-    //     }
-    //   });
-    //   console.log('type', type);
-    //   return type;
-    // },
     // Check what screen size
     simulationBreakpoints() {
       //this is needed nested underneath vuetify's initial breakpoint switch function
@@ -380,5 +360,11 @@ export default {
   width: 100%;
   height: 100%;
   overflow: hidden;
+}
+
+.holds-the-iframe {
+  background: url('https://media1.giphy.com/media/3oEjI6SIIHBdRxXI40/giphy.gif')
+    center center no-repeat;
+  background-color: #fff;
 }
 </style>
