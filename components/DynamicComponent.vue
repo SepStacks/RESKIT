@@ -14,18 +14,23 @@
     <!-- use loader if component hasn't generated yet -->
 
     <div>loading component, please wait</div>
-  <!-- Lottie file loader -->
-    <UiLoader/>
+
+    <Loader/>
 
   </div>
   </div>
 </template>
 
 <script>
+import Loader from '~/components/loaders/CompLoader'
 export default {
-    name: 'VueFile',
+  components: {Loader},
+    name: 'DynamicComponent',
     inheritAttrs: false,
     props: {
+      name: {
+        type: String
+      },
       file: {
         type: String,
         required: true,
@@ -46,7 +51,7 @@ export default {
           )
           this.$emit('loaded', component.default)
         } catch (err) {
-          component = await import('./Missing')
+          component = await import('./errors/Missing')
           this.$emit('error', err)
         }
         this.component = component.default

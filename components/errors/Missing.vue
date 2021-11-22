@@ -1,6 +1,6 @@
 <template>
     <div>
-        Component not found
+        Component is missing
     </div>
 </template>
 
