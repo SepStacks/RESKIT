@@ -11,6 +11,7 @@
               <v-row justify="center">
                 <v-col
                   cols="12"
+                  :xl="device.xl"
                   :lg="device.lg"
                   class="pa-5"
                   v-for="device in devices"
@@ -120,34 +121,6 @@ export default {
       laptops: laptops,
       televisions: televisions,
     };
-  },
-  computed: {
-    selectedLgAndUp() {
-      return {
-        name: 'Laptop with HiDPI screen',
-        featured: false,
-        width: 1440,
-        height: 900,
-        userAgent: '',
-        touch: false,
-        os: '',
-        screen: 'laptop',
-      };
-    },
-    // selectedMdAndDown() {
-    //   return {
-    //     name: 'Galaxy S10/S10+',
-    //     featured: true,
-    //     width: 360,
-    //     userAgent: '',
-    //     touch: false,
-    //     os: 'Android',
-    //     screen: 'phone',
-    //     height: 760,
-    //   };
-    // },
-    // Seperate data based on breakpoints
-    // Enable filtering for breakpoints
   },
 };
 </script>

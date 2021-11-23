@@ -41,8 +41,14 @@ export default {
       // if you dont use this, you wont be able to simulate 4k screens and their smaller versions acurrately
       //create a base for the switch function
       switch (true) {
+        //4k
+        case this.width > 2160:
+          console.log('simultated-4k');
+
+          return 'simultated-4k';
+
         // xl
-        case this.width > 1904:
+        case this.width < 2160 && this.width > 1904:
           console.log('simultated-xl');
 
           return 'simultated-xl';
@@ -63,7 +69,6 @@ export default {
       }
     },
     wrapperScaleStyles() {
-      console.log('hello', this.screen === this.checkScreen);
       // check what screen it is eg: (laptop, tablet, etc)
       // check what viewpoint it is eg: (xl, lg etc)
       // Create a component property that will store simulated breakpoints that matches vuetify
@@ -74,8 +79,10 @@ export default {
           switch (this.$vuetify.breakpoint.name) {
             case 'xl':
               switch (this.simulationBreakpoints) {
+                case 'simultated-4k':
+                  return 'scale(0.3, 0.3)';
                 case 'simultated-xl':
-                  return 'scale(0.1, 0.1)';
+                  return 'scale(0.5, 0.5)';
                 case 'simultated-lg':
                   return 'scale(0.6, 0.6)';
                 case 'simultated-md':
@@ -88,6 +95,8 @@ export default {
 
             case 'lg':
               switch (this.simulationBreakpoints) {
+                case 'simultated-4k':
+                  return 'scale(0.2, 0.2)';
                 case 'simultated-xl':
                   return 'scale(0.2, 0.2)';
                 case 'simultated-lg':
@@ -102,6 +111,8 @@ export default {
 
             case 'md':
               switch (this.simulationBreakpoints) {
+                case 'simultated-4k':
+                  return 'scale(0.1, 0.1)';
                 case 'simultated-xl':
                   return 'scale(0.1, 0.1)';
                 case 'simultated-lg':
@@ -116,6 +127,8 @@ export default {
 
             case 'sm':
               switch (this.simulationBreakpoints) {
+                case 'simultated-4k':
+                  return 'scale(0.3, 0.3)';
                 case 'simultated-xl':
                   return 'scale(0.1, 0.1)';
                 case 'simultated-lg':
@@ -129,8 +142,9 @@ export default {
               }
 
             case 'xs':
-              //Simulated breakpoints
               switch (this.simulationBreakpoints) {
+                case 'simultated-4k':
+                  return 'scale(0.3, 0.3)';
                 case 'simultated-xl':
                   return 'scale(0.1, 0.1)';
                 case 'simultated-lg':
