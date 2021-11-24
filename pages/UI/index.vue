@@ -2,8 +2,8 @@
   <div>
     <Structure>
       <template #content>
-        <v-text-field class="pa-5" label="Url" />
-        <v-btn class="pa-5">submit</v-btn>
+        <v-text-field v-model="url" solo />
+        <v-btn @click="src = url">update</v-btn>
 
         <v-card color="#C4C5C7" height="100%">
           <Structure>
@@ -15,7 +15,7 @@
                   :lg="device.lg"
                   class="pa-5"
                   v-for="device in devices"
-                  :key="device.index"
+                  :key="device.id"
                 >
                   <v-select
                     solo
@@ -40,6 +40,7 @@
                     :width="device.breakpoint.width"
                     :screen="device.breakpoint.screen"
                     :types="types"
+                    :src="src"
                   />
                 </v-col>
               </v-row>
@@ -92,14 +93,15 @@ export default {
     };
     const devices = [
       {
+        id: 1,
         lg: 8,
         screenSize: 'lgAndUp',
         items: lgAndUp,
         breakpoint: selectedLgAndUp,
       },
       {
+        id: 2,
         lg: 4,
-
         screenSize: 'mdAndDown',
         items: mdAndDown,
         breakpoint: selectedMdAndDown,
@@ -112,6 +114,8 @@ export default {
   },
   data() {
     return {
+      url: 'https://nuxtjs.org/',
+      src: 'https://nuxtjs.org/',
       // Device types
       types: TYPES,
 
@@ -121,6 +125,9 @@ export default {
       laptops: laptops,
       televisions: televisions,
     };
+  },
+  methods: {
+
   },
 };
 </script>

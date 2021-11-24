@@ -12,7 +12,6 @@
 <script>
 export default {
   props: {
-    url: { type: String, default: 'https://nuxtjs.org/' },
     activeDevice: { type: Object },
     height: {
       required: false,
@@ -22,6 +21,7 @@ export default {
     },
     screen: { type: String },
     src: {
+      type: String,
       default: 'https://nuxtjs.org/',
     },
     deviceType: {
