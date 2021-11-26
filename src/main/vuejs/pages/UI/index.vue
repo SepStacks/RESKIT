@@ -2,8 +2,8 @@
   <div>
     <Structure>
       <template #content>
-        <v-text-field class="pa-5" label="Url" />
-        <v-btn class="pa-5">submit</v-btn>
+        <v-text-field v-model="url" solo />
+        <v-btn @click="src = url">update</v-btn>
 
         <v-card color="#C4C5C7" height="100%">
           <Structure>
@@ -11,10 +11,11 @@
               <v-row justify="center">
                 <v-col
                   cols="12"
+                  :xl="device.xl"
                   :lg="device.lg"
                   class="pa-5"
                   v-for="device in devices"
-                  :key="device.index"
+                  :key="device.id"
                 >
                   <v-select
                     solo
@@ -39,6 +40,7 @@
                     :width="device.breakpoint.width"
                     :screen="device.breakpoint.screen"
                     :types="types"
+                    :src="src"
                   />
                 </v-col>
               </v-row>
@@ -91,14 +93,15 @@ export default {
     };
     const devices = [
       {
+        id: 1,
         lg: 8,
         screenSize: 'lgAndUp',
         items: lgAndUp,
         breakpoint: selectedLgAndUp,
       },
       {
+        id: 2,
         lg: 4,
-
         screenSize: 'mdAndDown',
         items: mdAndDown,
         breakpoint: selectedMdAndDown,
@@ -111,6 +114,8 @@ export default {
   },
   data() {
     return {
+      url: 'https://nuxtjs.org/',
+      src: 'https://nuxtjs.org/',
       // Device types
       types: TYPES,
 
@@ -121,33 +126,8 @@ export default {
       televisions: televisions,
     };
   },
-  computed: {
-    selectedLgAndUp() {
-      return {
-        name: 'Laptop with HiDPI screen',
-        featured: false,
-        width: 1440,
-        height: 900,
-        userAgent: '',
-        touch: false,
-        os: '',
-        screen: 'laptop',
-      };
-    },
-    // selectedMdAndDown() {
-    //   return {
-    //     name: 'Galaxy S10/S10+',
-    //     featured: true,
-    //     width: 360,
-    //     userAgent: '',
-    //     touch: false,
-    //     os: 'Android',
-    //     screen: 'phone',
-    //     height: 760,
-    //   };
-    // },
-    // Seperate data based on breakpoints
-    // Enable filtering for breakpoints
+  methods: {
+
   },
 };
 </script>
