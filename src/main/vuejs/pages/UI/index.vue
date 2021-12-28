@@ -27,6 +27,7 @@
     </v-app-bar>
     <v-card
       color="#C4C5C7"
+      class="parent"
       height="100vh"
     >
 
@@ -38,8 +39,7 @@
           v-for="device in devices"
           :key="device.id"
         >
-
-          <v-card  class="mt-5 mx-3">
+          <v-card :max-height="maxHeight"  class="child mt-5 mx-3">
             <v-toolbar>
               <v-select
                 class="mt-8"
@@ -164,7 +164,48 @@ export default {
       tablets: tablets,
       laptops: laptops,
       televisions: televisions,
+
+      cardSizes: [{
+        breakpoint: 'xs',
+        size: '800px'
+      },
+      {
+        breakpoint: 'sm',
+        size: '800px'
+      },
+      {
+        breakpoint: 'md',
+        size: '800px'
+      },
+      {
+        breakpoint: 'lg',
+        size: '700px'
+      },
+        {
+        breakpoint: 'xl',
+        size: '800px'
+      }
+      ]
     }
+  },
+
+  computed: {
+    maxHeight() {
+      //refractored switch function to make use of array
+      for (const item of this.cardSizes) {
+     switch (this.$vuetify.breakpoint.name) {
+        case item.breakpoint:
+          console.log({item})
+          return item.size
+      }
+}
+    
+     
+
+    }
+  },
+  mounted() {
+    console.log(this.maxHeight, 'max')
   },
   methods: {
 
@@ -176,16 +217,18 @@ export default {
 
 
 .parent {
-  position: relative;
+  /* background-color: lightblue; */
+  /* max-height: 50%; */
+  /* padding: 10px; */
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
 }
 
 .child {
-  position: absolute;
-  top:0;
-    bottom:0;
+  /* position: absolute; */
 
-  left: 25%;
-    right: 25%;
+  overflow-y: none;
 
 
 }

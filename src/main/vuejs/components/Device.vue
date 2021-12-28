@@ -361,10 +361,6 @@ transform-origin: top center;
 
 .device {
   margin: 0 auto ;
-  // border: 40px solid #2f3850;
-  // border-width: 55px 7px;
-  // border-radius: 30px;
-  // margin: 0 auto;
   overflow: hidden;
   transition: all 0.5s ease;
   -webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
