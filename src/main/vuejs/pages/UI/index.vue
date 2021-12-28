@@ -1,54 +1,95 @@
 <template>
   <div>
-    <Structure>
-      <template #content>
-        <v-text-field v-model="url" solo />
-        <v-btn @click="src = url">update</v-btn>
+    <v-app-bar
+      app
+      color="grey"
+      elevate-on-scroll
+    >
+      <v-toolbar-title>Title</v-toolbar-title>
 
-        <v-card color="#C4C5C7" height="100%">
-          <Structure>
-            <template #content>
-              <v-row justify="center">
-                <v-col
-                  cols="12"
-                  :xl="device.xl"
-                  :lg="device.lg"
-                  class="pa-5"
-                  v-for="device in devices"
-                  :key="device.id"
+      <v-spacer></v-spacer>
+      <v-text-field
+        class="pt-7"
+        v-model="url"
+        solo
+      />
+      <v-btn
+        class="d-flex align-center ml-3"
+        height="46"
+        @click="src = url"
+      >update</v-btn>
+
+      <v-spacer></v-spacer>
+
+      <v-btn icon>
+        <v-icon>mdi-qrcode</v-icon>
+      </v-btn>
+    </v-app-bar>
+    <v-card
+      color="#C4C5C7"
+      height="100vh"
+    >
+
+      <v-row  >
+        <v-col
+          cols="12"
+          :xl="device.xl"
+          :lg="device.lg"
+          v-for="device in devices"
+          :key="device.id"
+        >
+
+          <v-card  class="mt-5 mx-3">
+            <v-toolbar>
+              <v-select
+                class="mt-8"
+                label="devices"
+                v-model="device.breakpoint"
+                :items="device.items"
+                solo
+              >
+                <template
+                  slot="selection"
+                  slot-scope="data"
                 >
-                  <v-select
-                    solo
-                    label="devices"
-                    v-model="device.breakpoint"
-                    :items="device.items"
-                  >
-                    <template slot="selection" slot-scope="data">
-                      <!-- HTML that describe how select should render selected items -->
-                      {{ data.item.name }} - {{ data.item.width }} x
-                      {{ data.item.height }}
-                    </template>
-                    <template slot="item" slot-scope="data">
-                      <!-- HTML that describe how select should render items when the select is open -->
-                      {{ data.item.name }} - {{ data.item.width }} x
-                      {{ data.item.height }}
-                    </template>
-                  </v-select>
+                  <!-- HTML that describe how select should render selected items -->
+                  {{ data.item.name }} - {{ data.item.width }} x
+                  {{ data.item.height }}
+                </template>
+                <template
+                  slot="item"
+                  slot-scope="data"
+                >
+                  <!-- HTML that describe how select should render items when the select is open -->
+                  {{ data.item.name }} - {{ data.item.width }} x
+                  {{ data.item.height }}
+                </template>
+              </v-select>
+              <v-spacer />
+              <v-btn>
 
-                  <Device
-                    :height="device.breakpoint.height"
-                    :width="device.breakpoint.width"
-                    :screen="device.breakpoint.screen"
-                    :types="types"
-                    :src="src"
-                  />
-                </v-col>
-              </v-row>
-            </template>
-          </Structure>
-        </v-card>
-      </template>
-    </Structure>
+              </v-btn>
+              <v-btn class="ml-2">
+
+              </v-btn>
+
+            </v-toolbar>
+                  <Device 
+                class="mt-5"
+                :height="device.breakpoint.height"
+                :width="device.breakpoint.width"
+                :screen="device.breakpoint.screen"
+                :types="types"
+                :src="src"
+              />
+          </v-card>
+
+        </v-col>
+
+      </v-row>
+
+    </v-card>
+
   </div>
 </template>
 
@@ -59,18 +100,17 @@ import {
   laptops,
   televisions,
   TYPES,
-} from '~/assets/devices.json';
-import Structure from '~/components/Structure.vue';
-import Device from '~/components/Device.vue';
+} from '~/assets/devices.json'
+import Structure from '~/components/Structure.vue'
+import Device from '~/components/Device.vue'
 
-console.log('devices-module');
+console.log('devices-module')
 export default {
   components: { Structure, Device },
-  asyncData({}) {
-    const lgAndUp = [...laptops, ...televisions];
-
-    const mdAndDown = [...phones, ...tablets];
-    const selectedLgAndUp = {
+  asyncData ({ }) {
+    const lgAndUp = [...laptops, ...televisions]
+    const mdAndDown = [...phones, ...tablets]
+     const selectedLgAndUp = {
       name: 'Laptop with HiDPI screen',
       featured: false,
       width: 1440,
@@ -79,7 +119,7 @@ export default {
       touch: false,
       os: '',
       screen: 'laptop',
-    };
+    }
 
     const selectedMdAndDown = {
       name: 'Galaxy S10/S10+',
@@ -90,7 +130,7 @@ export default {
       os: 'Android',
       screen: 'phone',
       height: 760,
-    };
+    }
     const devices = [
       {
         id: 1,
@@ -106,13 +146,13 @@ export default {
         items: mdAndDown,
         breakpoint: selectedMdAndDown,
       },
-    ];
+    ]
 
     return {
       devices,
-    };
+    }
   },
-  data() {
+  data () {
     return {
       url: 'https://nuxtjs.org/',
       src: 'https://nuxtjs.org/',
@@ -124,7 +164,7 @@ export default {
       tablets: tablets,
       laptops: laptops,
       televisions: televisions,
-    };
+    }
   },
   methods: {
 
@@ -132,9 +172,22 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
-* {
-  padding: 0;
-  margin: 0;
+<style scoped>
+
+
+.parent {
+  position: relative;
 }
+
+.child {
+  position: absolute;
+  top:0;
+    bottom:0;
+
+  left: 25%;
+    right: 25%;
+
+
+}
+
 </style>

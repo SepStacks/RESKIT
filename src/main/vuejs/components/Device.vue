@@ -1,10 +1,9 @@
 <template>
   <div id="wrapper" :style="`transform: ${wrapperScaleStyles};`">
-    <v-sheet class="device" id="device" :height="height" :width="width">
-      <v-container v-if="$slots.content" fill-height>
-        <slot name="content" />
-      </v-container>
-      <iframe v-else id="frame_1" class="holds-the-iframe" :src="src" />
+      <!-- <div id="wrapper" :style="`transform: ${wrapperScaleStyles};`"> -->
+
+      <v-sheet elevation="10" class="device" color="red" :height="height" :width="width"   >
+      <iframe id="frame_1" class="holds-the-iframe" :src="src"/>
     </v-sheet>
   </div>
 </template>
@@ -310,7 +309,7 @@ export default {
                 case 'simultated-sm':
                   return 'scale(0.4, 0.4)';
                 case 'simultated-xs':
-                  return 'scale(0.6, 0.6)';
+                  return 'scale(0.8, 0.8)';
               }
 
             case 'lg':
@@ -318,7 +317,7 @@ export default {
                 case 'simultated-sm':
                   return 'scale(0.4, 0.4)';
                 case 'simultated-xs':
-                  return 'scale(0.7, 0.7)';
+                  return 'scale(0.8, 0.8)';
               }
 
             case 'md':
@@ -354,13 +353,18 @@ export default {
 
 <style lang="scss" scoped>
 #wrapper {
-  transform-origin: top left;
-}
+transform-origin: top center;
+  display: grid;
+    align-items: center;
+    justify-content: center;
+    }
+
 .device {
-  border: 40px solid #2f3850;
-  border-width: 55px 7px;
-  border-radius: 30px;
-  margin: 50px auto;
+  margin: 0 auto ;
+  // border: 40px solid #2f3850;
+  // border-width: 55px 7px;
+  // border-radius: 30px;
+  // margin: 0 auto;
   overflow: hidden;
   transition: all 0.5s ease;
   -webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
@@ -369,6 +373,7 @@ export default {
   -o-animation: fadein 2s; /* Opera < 12.1 */
   animation: fadein 2s;
 }
+
 .device iframe {
   border: 0;
   width: 100%;
@@ -376,9 +381,12 @@ export default {
   overflow: hidden;
 }
 
+
 .holds-the-iframe {
   background: url('https://media1.giphy.com/media/3oEjI6SIIHBdRxXI40/giphy.gif')
-    center center no-repeat;
+     center center no-repeat;
   background-color: #fff;
 }
+
+
 </style>
