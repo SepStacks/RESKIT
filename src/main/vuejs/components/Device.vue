@@ -3,7 +3,7 @@
       <!-- <div id="wrapper" :style="`transform: ${wrapperScaleStyles};`"> -->
 
       <v-sheet elevation="10" class="device" color="red" :height="height" :width="width"   >
-      <iframe id="frame_1" class="holds-the-iframe" :src="src"/>
+      <iframe id="frame_1" class="holds-the-iframe"  :src="src"/>
     </v-sheet>
   </div>
 </template>
@@ -81,7 +81,7 @@ export default {
                 case 'simultated-4k':
                   return 'scale(0.3, 0.3)';
                 case 'simultated-xl':
-                  return 'scale(0.5, 0.5)';
+                  return 'scale(0.6, 0.6)';
                 case 'simultated-lg':
                   return 'scale(0.6, 0.6)';
                 case 'simultated-md':
@@ -97,7 +97,7 @@ export default {
                 case 'simultated-4k':
                   return 'scale(0.2, 0.2)';
                 case 'simultated-xl':
-                  return 'scale(0.2, 0.2)';
+                  return 'scale(0.5, 0.5)';
                 case 'simultated-lg':
                   return 'scale(0.5, 0.5)';
                 case 'simultated-md':
@@ -111,9 +111,9 @@ export default {
             case 'md':
               switch (this.simulationBreakpoints) {
                 case 'simultated-4k':
-                  return 'scale(0.1, 0.1)';
+                  return 'scale(0.2, 0.2)';
                 case 'simultated-xl':
-                  return 'scale(0.1, 0.1)';
+                  return 'scale(0.5, 0.5)';
                 case 'simultated-lg':
                   return 'scale(0.4, 0.4)';
                 case 'simultated-md':
@@ -129,7 +129,7 @@ export default {
                 case 'simultated-4k':
                   return 'scale(0.3, 0.3)';
                 case 'simultated-xl':
-                  return 'scale(0.1, 0.1)';
+                  return 'scale(0.3, 0.3)';
                 case 'simultated-lg':
                   return 'scale(0.4, 0.4)';
                 case 'simultated-md':
@@ -177,9 +177,9 @@ export default {
                 case 'simultated-xl':
                   return 'scale(0.1, 0.1)';
                 case 'simultated-lg':
-                  return 'scale(0.5, 0.5)';
+                  return 'scale(0.6, 0.6)';
                 case 'simultated-md':
-                  return 'scale(0.5, 0.5)';
+                  return 'scale(0.6, 0.6)';
                 case 'simultated-sm':
                   return 'scale(0.5, 0.5)';
                 case 'simultated-xs':
@@ -191,7 +191,7 @@ export default {
                 case 'simultated-xl':
                   return 'scale(0.1, 0.1)';
                 case 'simultated-lg':
-                  return 'scale(0.4, 0.4)';
+                  return 'scale(0.5, 0.5)';
                 case 'simultated-md':
                   return 'scale(0.4, 0.4)';
                 case 'simultated-sm':
@@ -306,6 +306,8 @@ export default {
           switch (this.$vuetify.breakpoint.name) {
             case 'xl':
               switch (this.simulationBreakpoints) {
+                case 'simultated-md':
+                  return 'scale(0.5, 0.5)';
                 case 'simultated-sm':
                   return 'scale(0.4, 0.4)';
                 case 'simultated-xs':
@@ -314,6 +316,8 @@ export default {
 
             case 'lg':
               switch (this.simulationBreakpoints) {
+                    case 'simultated-md':
+                  return 'scale(0.4, 0.4)';
                 case 'simultated-sm':
                   return 'scale(0.4, 0.4)';
                 case 'simultated-xs':
@@ -322,14 +326,18 @@ export default {
 
             case 'md':
               switch (this.simulationBreakpoints) {
+                    case 'simultated-md':
+                  return 'scale(0.5, 0.5)';
                 case 'simultated-sm':
-                  return 'scale(0.4, 0.4)';
+                  return 'scale(0.7, 0.7)';
                 case 'simultated-xs':
-                  return 'scale(0.4, 0.4)';
+                  return 'scale(0.6, 0.6)';
               }
 
             case 'sm':
               switch (this.simulationBreakpoints) {
+                    case 'simultated-md':
+                  return 'scale(0.5, 0.5)';
                 case 'simultated-sm':
                   return 'scale(0.4, 0.4)';
                 case 'simultated-xs':
@@ -357,7 +365,10 @@ transform-origin: top center;
   display: grid;
     align-items: center;
     justify-content: center;
+    
     }
+
+ 
 
 .device {
   margin: 0 auto ;

@@ -9,8 +9,8 @@ module.exports = {
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    titleTemplate: "%s - ussd-testing",
-    title: "ussd-testing",
+    titleTemplate: "%s - reskit",
+    title: "reskit",
     meta: [
       { charset: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
@@ -27,11 +27,20 @@ module.exports = {
   },
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: ["~/plugins/lottie.js"],
+  plugins: ["~/plugins/lottie.js", "~/plugins/vueQr.js"],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
-  components: true,
+  components: {
+    dirs: [
+      '~/components',
+      '~/components/popups',
+      '~/components/buttons',
 
+      // '~/components/navigation',
+      // '~/components/ui',
+      // '~/components/ui/form',
+    ]
+  },
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
     // https://go.nuxtjs.dev/vuetify
