@@ -33,10 +33,11 @@
       :height="$vuetify.breakpoint.lgAndUp ? '100vh' : '100%'"
     >
 
-      <v-row>
+      <v-row >
         <v-col
           class="pa-0"
           cols="12"
+          ref="deviceRef"
           :xl="device.xl"
           :lg="device.lg"
           v-for="device in devices"
@@ -44,7 +45,7 @@
         >
 
           <v-card
-            :max-height="maxHeight"
+            :height="maxHeight"
             class="child mt-5 mx-3"
           >
 
@@ -87,7 +88,7 @@
               <!-- <Group v-model="simulationBreakpoints"></Group> -->
               <v-sheet>
 
-                {{simulationBreakpoints}}
+                {{simulationBreakpoints(device)}}
               </v-sheet>
             </v-toolbar>
 
@@ -158,18 +159,23 @@ export default {
         id: 1,
         rotate: false,
         lg: 8,
+                xl: 7,
+
         screenSize: 'lgAndUp',
         items: lgAndUp,
-        breakpoint: lgAndUp[0],
+        breakpoint: lgAndUp[3],
+        viewport: ''
+
       },
       {
         id: 2,
         rotate: false,
-
+        xl: 5 ,
         lg: 4,
         screenSize: 'mdAndDown',
         items: mdAndDown,
-        breakpoint: mdAndDown[0],
+        breakpoint: mdAndDown[6],
+        viewport: ''
       },
     ]
 
@@ -229,10 +235,41 @@ export default {
     },
 
     // Check what screen size
-    simulationBreakpoints () {
-      for (const device of this.devices) {
-        console.log({ device })
-        switch (true) {
+    // simulationBreakpoints (device) {
+    //   for (const device of this.devices) {
+    //  if(device.id === 2) {
+    //       switch (true) {
+    //       //4k
+    //       case device.breakpoint.width > 2160:
+    //         return '4k'
+    //       // xl
+    //       case device.breakpoint.width < 2160 && device.breakpoint.width > 1904:
+    //         return 'xl'
+    //       // lg
+    //       case device.breakpoint.width < 1904 && device.breakpoint.width > 1264:
+    //         return 'lg'
+    //       // md
+    //       case device.breakpoint.width < 1264 && device.breakpoint.width > 960:
+    //         return 'md'
+    //       // sm
+    //       case device.breakpoint.width < 960 && device.breakpoint.width > 600:
+    //         return 'sm'
+    //       // xs
+    //       case device.breakpoint.width < 600:
+    //         return 'xs'
+    //     }
+    //  }
+    //   }
+
+    // },
+  },
+mounted() {
+},
+methods: {
+    simulationBreakpoints (device) {
+       for (const item of this.devices) {
+     if(item.id === device.id) {
+          switch (true) {
           //4k
           case device.breakpoint.width > 2160:
             return '4k'
@@ -252,11 +289,13 @@ export default {
           case device.breakpoint.width < 600:
             return 'xs'
         }
+     }
       }
 
-    },
-  },
+   
 
+    },
+}
   // watch: {
   //   simulationBreakpoints() {
   //     this.simulationBreakpoints
@@ -266,6 +305,7 @@ export default {
 </script>
 
 <style scoped>
+
 .parent {
   /* background-color: lightblue; */
   /* max-height: 50%; */
