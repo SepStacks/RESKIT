@@ -95,11 +95,11 @@ export default {
             case 'lg':
               switch (this.simulationBreakpoints) {
                 case 'simultated-4k':
-                  return 'scale(0.2, 0.2)';
+                  return 'scale(0.25, 0.25)';
                 case 'simultated-xl':
                   return 'scale(0.5, 0.5)';
                 case 'simultated-lg':
-                  return 'scale(0.5, 0.5)';
+                  return 'scale(0.7, 0.7)';
                 case 'simultated-md':
                   return 'scale(0.4, 0.4)';
                 case 'simultated-sm':
@@ -317,11 +317,11 @@ export default {
             case 'lg':
               switch (this.simulationBreakpoints) {
                     case 'simultated-md':
-                  return 'scale(0.4, 0.4)';
+                  return 'scale(0.32, 0.32)';
                 case 'simultated-sm':
                   return 'scale(0.4, 0.4)';
                 case 'simultated-xs':
-                  return 'scale(0.8, 0.8)';
+                  return 'scale(0.6, 0.6)';
               }
 
             case 'md':
