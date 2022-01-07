@@ -62,7 +62,6 @@
               </div>
               <v-spacer></v-spacer>
               <v-select
-              
                 dark
                 background-color="darkness"
                 class="mt-8 mx-5"
@@ -89,33 +88,30 @@
                 </template>
               </v-select>
               <v-spacer />
-      
-    <ToolTip title="rotate">
-                  <template #content>
-                     <v-hover v-slot="{ hover }">
-                <v-btn
-                  icon
-                  large
-                  tile
-                  :depressed="hover ? false : true"
-                  class="button-action"
-                  :color="hover ? 'primary' : 'midnight'"
-                  @click="device.rotate = !device.rotate"
-                >
-                  <v-icon
-                    width="50"
-                    color="white"
-                    small
-                  >mdi-phone-rotate-landscape</v-icon>
-                </v-btn>
-              </v-hover>
-                  </template>
-              </ToolTip>
-             
-              <!-- <v-btn class="ml-2">
-
-              </v-btn> -->
-              <!-- <Group v-model="simulationBreakpoints"></Group> -->
+              <IconClick title="rotate" icon="mdi-phone-rotate-landscape" @click="device.rotate = !device.rotate"
+/>
+<!-- 
+              <ToolTip title="rotate">
+                <template #content>
+                  <v-hover v-slot="{ hover }">
+                    <v-btn
+                      icon
+                      large
+                      tile
+                      :depressed="hover ? false : true"
+                      class="button-action"
+                      :color="hover ? 'primary' : 'midnight'"
+                      @click="device.rotate = !device.rotate"
+                    >
+                      <v-icon
+                        width="50"
+                        color="white"
+                        small
+                      >mdi-phone-rotate-landscape</v-icon>
+                    </v-btn>
+                  </v-hover>
+                </template>
+              </ToolTip> -->
 
             </v-toolbar>
 
@@ -260,35 +256,6 @@ export default {
         }
       }
     },
-
-    // Check what screen size
-    // simulationBreakpoints (device) {
-    //   for (const device of this.devices) {
-    //  if(device.id === 2) {
-    //       switch (true) {
-    //       //4k
-    //       case device.breakpoint.width > 2160:
-    //         return '4k'
-    //       // xl
-    //       case device.breakpoint.width < 2160 && device.breakpoint.width > 1904:
-    //         return 'xl'
-    //       // lg
-    //       case device.breakpoint.width < 1904 && device.breakpoint.width > 1264:
-    //         return 'lg'
-    //       // md
-    //       case device.breakpoint.width < 1264 && device.breakpoint.width > 960:
-    //         return 'md'
-    //       // sm
-    //       case device.breakpoint.width < 960 && device.breakpoint.width > 600:
-    //         return 'sm'
-    //       // xs
-    //       case device.breakpoint.width < 600:
-    //         return 'xs'
-    //     }
-    //  }
-    //   }
-
-    // },
   },
   mounted () {
   },
@@ -356,9 +323,5 @@ export default {
   box-shadow: inset 0 0 10px #0000004f;
 }
 
-.button-action {
-    -moz-box-shadow: inset 0 0 10px #00000021;
-  -webkit-box-shadow: inset 0 0 10px #00000021;
-  box-shadow: inset 0 0 10px #0000004f;
-}
+
 </style>
