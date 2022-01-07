@@ -60,15 +60,18 @@ export default {
       // },
 
       light: {
-        primary: '#1D1F2B',
-        accent: '#E31B6D',
-        secondary: '#252934',
-        tertiary: '#2F3850',
-        quaternary: "#596C9E",
-        info: colors.teal.lighten1,
-        warning: '#FFB300',
-        error: colors.deepOrange.accent4,
-        success: colors.green.accent3
+        text: '#416BA2',
+        midnight: '#1C2D4A',
+        darkness: '#192841',
+        background: '#213556',
+        info: '#263F68',
+        infoBg: '#1D2E4B',
+        primary: '#01C5FF',
+        accent: '#C0F1FF',
+        secondary: '#1C2D4A',
+        warning: '#FE9E74',
+        error: '#FE7484',
+        success:'#74FEA2'
       }
     }
   }

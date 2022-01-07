@@ -20,7 +20,14 @@ export default {
 
 
 
-<style>
+<style >
+ /* .v-application {
+    background-image: url('../static/svg/Mobile_Background.svg') !important;
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
+    background-position: 50% 50% !important;
+  } */
+
 
      /* html, body {margin: 0; height: 100%; }  */
 
@@ -41,5 +48,7 @@ export default {
  
 }
 
-
+  .theme--light.v-application {
+    background: red !important;
+}
 </style>

@@ -1,7 +1,5 @@
 <template>
   <div id="wrapper" :style="`transform: ${wrapperScaleStyles};`">
-      <!-- <div id="wrapper" :style="`transform: ${wrapperScaleStyles};`"> -->
-
       <v-sheet elevation="10" class="device" color="red" :height="height" :width="width"   >
       <iframe id="frame_1" class="holds-the-iframe"  :src="src"/>
     </v-sheet>

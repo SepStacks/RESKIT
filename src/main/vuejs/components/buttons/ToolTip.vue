@@ -1,22 +1,25 @@
 <template>
   <v-tooltip bottom>
     <template v-slot:activator="{ on, attrs }">
-      <v-btn
-        color="primary"
-        dark
+      <div
         v-bind="attrs"
         v-on="on"
       >
-        Button
-      </v-btn>
+        <slot name="content" />
+      </div>
     </template>
-    <span>Tooltip</span>
+    <span>{{title}}</span>
   </v-tooltip>
+
 </template>
 
 <script>
 export default {
-
+  props: {
+    title: {
+      type: String
+    }
+  }
 }
 </script>
 
